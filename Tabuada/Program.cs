@@ -4,7 +4,6 @@ internal class Program
     private static void Main(string[] args)
     {
         int numero;
-
         do
         {
             Console.WriteLine("Digite um número entre 1 e 9, inclusive o 1 e o 9");
