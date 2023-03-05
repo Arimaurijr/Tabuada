@@ -1,22 +1,43 @@
-﻿//tabuada
-internal class Program
+﻿internal class Program
 {
     private static void Main(string[] args)
     {
-        int numero;
-        do
-        {
-            Console.WriteLine("Digite um número entre 1 e 9, inclusive o 1 e o 9");
-            numero = int.Parse(Console.ReadLine());
+        int numero, indice = 0;
 
-        } while (numero < 1 || numero > 9);
-
-        Console.WriteLine();
-        Console.WriteLine("TABUDA DO " + numero);
-        for(int i = 0; i <= 10; i++) 
+        void Entrada()
         {
-            Console.WriteLine(numero + " x " + i + " = " + (numero * i));
-            //Console.WriteLine("{0} x {1} = {2}", escolha, numero, resultado);
+            bool flag = false;
+
+            do
+            {
+                if (flag)
+                {
+                    Console.WriteLine("NÚMERO INVÁLIDO !!!");
+                    Console.WriteLine("DIGITE NOVAMENTE !!!");
+                }
+
+                Console.WriteLine("DIGITE UM NÚMERO ENTRE 1 E 9, INCLUSIVE 1 E 9");
+                numero = int.Parse(Console.ReadLine());
+                flag = true;
+
+            } while (numero < 1 || numero > 9);
         }
+
+        void Exibicao()
+        {
+            Console.WriteLine(numero + " X " + indice + " = " + (numero * indice));
+            indice++;
+        }
+
+        void Iteracao()
+        {
+            for (int i = 0; i <= 10; i++)
+            {
+                Exibicao();
+            }
+        }
+
+        Entrada();
+        Iteracao();
     }
 }
